@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
 import axios from 'axios';
-import config from './config.js';
+
 
 const HospitalManagement = () => {
   const [doctors, setDoctors] = useState([]);
@@ -18,7 +18,8 @@ const HospitalManagement = () => {
   const [message, setMessage] = useState('');
   const [editMode, setEditMode] = useState(false);
 
-  const baseUrl = `${config.url}/doctorapi`;
+  const baseUrl = `${import.meta.env.VITE_API_URL}/doctorapi`;
+
 
   useEffect(() => {
     fetchAllDoctors();
